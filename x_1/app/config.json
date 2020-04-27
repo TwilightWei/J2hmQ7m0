@@ -1,11 +1,13 @@
 {
-    "folder_dir":"app/ilovecoffee",
-    "csv_name":"customers.csv",
-    "id_length":8,
-    "name_number":10,
-    "name_list":["William", "James", "Harper", "Mason", "Evelyn", "Ella", "Avery", "Jackson", "Scarlett", "Madison", "Carter", "Wyatt"],
-    "country_code":"+886",
-    "door_number":["09"],
-    "phone_length":10,
-    "frequency_range":[0, 20]
+    "folder_dir": "app/ilovecoffee",
+    "csv_name": "customers.csv",
+
+    "customer_number": 500,
+    "id_length": 8,
+    "name_number": 10,
+    "name_list": ["William", "James", "Harper", "Mason", "Evelyn", "Ella", "Avery", "Jackson", "Scarlett", "Madison", "Carter", "Wyatt"],
+    "country_code": "+886",
+    "door_number": ["09"],
+    "phone_length": 10,
+    "frequency_range": [0, 20]
 }
