@@ -35,7 +35,7 @@
       </counter>
       <counter>
         <item-type type-id="" type="AbstractElementGroup" />
-        <value>351</value>
+        <value>352</value>
       </counter>
       <counter>
         <item-type type-id="generalization" type="UmlGeneralization" />

@@ -1,6 +1,7 @@
 {
-    "folder_dir":"./ilovecoffee",
+    "folder_dir":"app/ilovecoffee",
     "csv_name":"customers.csv",
+    "id_length":8,
     "name_number":10,
     "name_list":["William", "James", "Harper", "Mason", "Evelyn", "Ella", "Avery", "Jackson", "Scarlett", "Madison", "Carter", "Wyatt"],
     "country_code":"+886",
