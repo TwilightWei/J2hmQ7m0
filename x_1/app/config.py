@@ -15,10 +15,10 @@ class MyViewConfig(Config):
         pass
 
 class CustomerConfig(Config):
-    def get_customer_number(self):
+    def get_id_length(self):
         pass
 
-    def get_char_lists(self):
+    def get_name_number(self):
         pass
 
     def get_name_list(self):
