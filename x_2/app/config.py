@@ -4,7 +4,7 @@ class Config():
     def __init__(self):
         self._config_dir = "app/config.json"
         self._config_data = None
-        with open(self._config_dir, 'r') as json_file:
+        with open(self._config_dir, 'r', encoding='UTF-8') as json_file:
             self._config_data = json.load(json_file)
 
     def _get_property(self, property_name):

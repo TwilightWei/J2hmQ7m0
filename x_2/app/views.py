@@ -8,5 +8,8 @@ from app.tasks import crawl
 class MyView(View):
     def get(request):
         response = 'Finish crawling'
-        crawl()
+        if request.method == 'GET':
+            crawl()
+        else:
+            response = 'Request is not GET!'
         return HttpResponse(response)
