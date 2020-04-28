@@ -1,9 +1,11 @@
 import os
 import csv
+import statistics
 
 from django.shortcuts import render
 
 from django.http import HttpResponse
+from django.http import JsonResponse
 from django.views import View
 
 from app.config import MyViewConfig
@@ -20,7 +22,7 @@ class MyView(View):
                 os.mkdir(folder_dir)
                 response = 'Folder created'
         else:
-            response = 'Request id not GET!'
+            response = 'Request is not GET!'
         return HttpResponse(response)
     
     def create_csv(request):
@@ -38,10 +40,33 @@ class MyView(View):
                     response = key
                     writer.writerow([customers[key]['customer_id'], customers[key]['customer_name'], key, customers[key]['frequency']])
         else:
-            response = 'Request id not GET!'
+            response = 'Request is not GET!'
         return HttpResponse(response)
     
     def calculate_csv(request):
-        response = ''
-        
-        return HttpResponse('calculate_csv')
+        response = {}
+        if request.method == 'GET':
+            config = MyViewConfig()
+            folder_dir = config.get_folder_dir()
+            csv_name = config.get_csv_name()
+            frequency_list = []
+            median = None
+            mode = None
+            mean = None
+            with open(folder_dir+'/'+csv_name, 'r', newline='') as csv_file:
+                rows = csv.DictReader(csv_file)
+                for row in rows:
+                    frequency_list.append((int(row['frequency'])))
+            frequency_list.sort()
+            median = statistics.median(frequency_list)
+            try:
+                mode = statistics.mode(frequency_list)
+            except:
+                print('No mode exists.')
+            mean = round(statistics.mean(frequency_list), 5)
+            response['median'] = median
+            response['mode'] = mode
+            response['mean'] = mean
+        else:
+            response['error'] = 'Request is not GET!'
+        return JsonResponse(response)

@@ -18,7 +18,6 @@ class Customer():
                 customer_id = self._generate_customer_id()
                 customer_name = self._generate_name() + '.' + customer_id
                 frequency = self._generate_frequency()
-
                 customer = {
                     'customer_id': customer_id,
                     'customer_name': customer_name,
