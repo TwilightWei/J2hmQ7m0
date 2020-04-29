@@ -16,4 +16,3 @@ class TasksConfig(Config):
     
     def get_keyword(self) -> str:
         return self._get_property("keyword")
-

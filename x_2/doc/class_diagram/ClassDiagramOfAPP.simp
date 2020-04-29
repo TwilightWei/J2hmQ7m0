@@ -23,7 +23,7 @@
     <entity-ids>
       <counter>
         <item-type type-id="" type="AbstractElementGroup" />
-        <value>164</value>
+        <value>167</value>
       </counter>
       <counter>
         <item-type type-id="package" type="UmlPackage" />
