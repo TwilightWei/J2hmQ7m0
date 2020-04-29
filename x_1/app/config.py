@@ -33,8 +33,8 @@ class CustomerConfig(Config):
     def get_country_code(self) -> str:
         return self._get_property("country_code")
 
-    def get_door_number(self) -> str:
-        return self._get_property("door_number")
+    def get_door_numbers(self) -> str:
+        return self._get_property("door_numbers")
 
     def get_phone_length(self) -> int:
         return self._get_property("phone_length")

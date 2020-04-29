@@ -10,8 +10,8 @@ from django.views import View
 from app.config import MyViewConfig
 from app.customer import Customer
 
-# Create your views here.
 class MyView(View):
+    # Create a folder in specific dir
     def get(request):
         response = 'Folder existed'
         if request.method == 'GET':
@@ -24,6 +24,7 @@ class MyView(View):
             response = 'Request is not GET!'
         return HttpResponse(response)
     
+    # Create a csv in the folder and store customer data in it
     def create_csv(request):
         response = 'CSV created'
         if request.method == 'GET':
@@ -36,12 +37,12 @@ class MyView(View):
                 writer = csv.writer(csv_file)
                 writer.writerow(['customer_id', 'customer_name', 'customer_mobile', 'frequency'])
                 for key in customers:
-                    response = key
                     writer.writerow([customers[key]['customer_id'], customers[key]['customer_name'], key, customers[key]['frequency']])
         else:
             response = 'Request is not GET!'
         return HttpResponse(response)
     
+    # Calculate the median, mode and mean of frequency from the csv file
     def calculate_csv(request):
         response = {}
         if request.method == 'GET':

@@ -7,7 +7,7 @@
     "name_number": 10,
     "name_list": ["William", "James", "Harper", "Mason", "Evelyn", "Ella", "Avery", "Jackson", "Scarlett", "Madison", "Carter", "Wyatt"],
     "country_code": "+886",
-    "door_number": ["09"],
+    "door_numbers": ["09"],
     "phone_length": 10,
     "frequency_range": [0, 20]
 }
